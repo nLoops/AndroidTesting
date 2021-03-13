@@ -50,6 +50,11 @@ android {
         exclude 'META-INF/LGPL2.1'
         exclude("META-INF/*.kotlin_module")
     }
+
+    testOptions.unitTests {
+        includeAndroidResources = true
+        returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -77,6 +82,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
+    implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
     // Dependencies for local unit tests
     testImplementation "junit:junit:$junitVersion"
     testImplementation "org.hamcrest:hamcrest-all:$hamcrestVersion"
